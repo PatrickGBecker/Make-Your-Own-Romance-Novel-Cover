@@ -15,9 +15,6 @@ var savedCovers = [
 ];
 var currentCover;
 
-
-
-
 // Add your event listeners here 👇
 //missing function names
 showRandomCoverButton.addEventListener("click", );
