@@ -6,8 +6,9 @@ class Cover {
     this.tagline1 = descriptor1;
     this.tagline2 = descriptor2;
   }
+}
 
-  class RandomCover {
+class RandomCover {
     constructor(covers, titles, descriptors) {
       this.id = Date.now();
       this.cover = getRandomElement(covers);
@@ -15,4 +16,4 @@ class Cover {
       this.tagline1 = getRandomElement(descriptors);
       this.tagline2 = getRandomElement(descriptors);
     }
-  }
+}
