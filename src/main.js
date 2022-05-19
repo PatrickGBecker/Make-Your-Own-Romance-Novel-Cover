@@ -34,3 +34,18 @@ makeMyBookButton.addEventListener("click", );
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+
+function getRandomElement(array) {
+  let randomNum = getRandomIndex(array);
+  let randomItem = array[randomNum];
+  return randomItem;
+}
+
+function uponLoad() {
+  let loadCover = new RandomCover(covers, titles, descriptors)
+  bookImageButton.src = loadCover.cover
+  bookTitleButton.innerHTML = loadCover.title
+  bookTagline1Button.innerHTML = loadCover.tagline1
+  bookTagline2Button.innerHTML = loadCover.tagline2
+  return loadCover;
+}
