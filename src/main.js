@@ -85,8 +85,8 @@ function showMakeYourOwnView() {
   homeViewPage.classList.add("hidden");
   showRandomCoverButton.classList.add("hidden");
   saveCoverButton.classList.add("hidden");
+  savedViewPage.classList.add("hidden");
   formViewPage.classList.remove("hidden");
-
   homeButtonHidden.classList.remove("hidden");
 };
 
@@ -95,7 +95,8 @@ function showHomeView() {
   showRandomCoverButton.classList.remove("hidden");
   saveCoverButton.classList.remove("hidden");
   homeButtonHidden.classList.add("hidden");
-    formViewPage.classList.add("hidden");
+  formViewPage.classList.add("hidden");
+  savedViewPage.classList.add("hidden");
 };
 
 function makeNewBook(newUserCover, newUserTitle, newUserDesc1, newUserDesc2) {
@@ -129,8 +130,6 @@ function displayNewUserCover() {
   bookTagline2Button.innerHTML = currentCover.tagline2;
 };
 
-}
-
 function pushToArray() {
   covers.push(currentCover.cover);
   titles.push(currentCover.title);
@@ -161,4 +160,3 @@ function showSavedCoverSection() {
   showSavedView();
   showSavedCoverArray();
 }
-
