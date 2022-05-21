@@ -2,6 +2,7 @@
 var showRandomCoverButton = document.querySelector(".random-cover-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
 var viewSavedButton = document.querySelector(".view-saved-button");
+var savedCoversSection = document.querySelector(".saved-covers-section");
 var makeNewButton = document.querySelector(".make-new-button");
 var homeButtonHidden = document.querySelector(".home-button");
 var bookImageButton = document.querySelector(".cover-image");
@@ -26,15 +27,22 @@ var formdescriptor2Input = document.querySelector(".user-desc2");
 
 
 // We've provided a few variables below
-var savedCovers = [];
+var savedCovers = [new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")];
 var currentCover;
 
 // Add your event listeners here 👇
 showRandomCoverButton.addEventListener("click", uponLoad);
+
 // saveCoverButton.addEventListener("click", );
 viewSavedButton.addEventListener("click", showSavedView);
 makeNewButton.addEventListener("click", showMakeYourOwnView);
 homeButtonHidden.addEventListener("click", showHomeView);
+
+saveCoverButton.addEventListener("click", noDuplicates);
+viewSavedButton.addEventListener("click", showSavedCoverSection);
+makeNewButton.addEventListener("click", showMakeYourOwnView);
+//homeButtonHidden.addEventListener("click", );
+
 // bookImageButton.addEventListener("click", );
 // bookTitleButton.addEventListener("click", );
 // bookTagline1Button.addEventListener("click", );
@@ -78,6 +86,7 @@ function showMakeYourOwnView() {
   showRandomCoverButton.classList.add("hidden");
   saveCoverButton.classList.add("hidden");
   formViewPage.classList.remove("hidden");
+
   homeButtonHidden.classList.remove("hidden");
 };
 
@@ -119,3 +128,37 @@ function displayNewUserCover() {
   bookTagline1Button.innerHTML = currentCover.tagline1;
   bookTagline2Button.innerHTML = currentCover.tagline2;
 };
+
+}
+
+function pushToArray() {
+  covers.push(currentCover.cover);
+  titles.push(currentCover.title);
+  descriptors.push(currentCover.tagline1);
+  descriptors.push(currentCover.tagline2);
+};
+
+function noDuplicates() {
+  if (!savedCovers.includes(currentCover)) {
+    savedCovers.push(currentCover)
+  }
+}
+
+function showSavedCoverArray() {
+  var displaySavedCovers = "";
+  for (let i = 0; i < savedCovers.length; i++) {
+    displaySavedCovers +=
+    `<section class='mini-cover'>
+    <img class="cover-image" id="${savedCovers[i].id}" src="${savedCovers[i].cover}">
+     <h2 class="cover-title">${savedCovers[i].title}</h2>
+     <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+     </section>`;
+    }
+    savedCoversSection.innerHTML = displaySavedCovers;
+}
+
+function showSavedCoverSection() {
+  showSavedView();
+  showSavedCoverArray();
+}
+
