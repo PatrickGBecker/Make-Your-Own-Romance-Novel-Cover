@@ -32,26 +32,18 @@ var currentCover;
 
 // Add your event listeners here 👇
 showRandomCoverButton.addEventListener("click", uponLoad);
-
-// saveCoverButton.addEventListener("click", );
 viewSavedButton.addEventListener("click", showSavedView);
 makeNewButton.addEventListener("click", showMakeYourOwnView);
 homeButtonHidden.addEventListener("click", showHomeView);
-
 saveCoverButton.addEventListener("click", noDuplicates);
 viewSavedButton.addEventListener("click", showSavedCoverSection);
 makeNewButton.addEventListener("click", showMakeYourOwnView);
-//homeButtonHidden.addEventListener("click", );
-
-// bookImageButton.addEventListener("click", );
-// bookTitleButton.addEventListener("click", );
-// bookTagline1Button.addEventListener("click", );
-// bookTagline2Button.addEventListener("click", );
 makeMyBookButton.addEventListener("click", makeMyBookForm);
 
 
 // Create your event handlers and other functions here 👇
 window.addEventListener("load", uponLoad);
+savedViewPage.addEventListener("dblclick", deleteSavedCover)
 
 // We've provided one function to get you started
 function getRandomIndex(array) {
@@ -159,4 +151,13 @@ function showSavedCoverArray() {
 function showSavedCoverSection() {
   showSavedView();
   showSavedCoverArray();
+}
+
+function deleteSavedCover(event) {
+  var coverID = parseInt(event.target.id);
+  for (let i = 0; i < savedCovers.length; i++) {
+    if (savedCovers[i].id === coverID)
+      {savedCovers.splice(i, 1)}
+      showSavedCoverArray();
+  }
 }

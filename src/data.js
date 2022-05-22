@@ -1,6 +1,6 @@
 var covers = [
   './assets/bluebrocade.jpg',
-  './assets/dance.jpg', 
+  './assets/dance.jpg',
   './assets/embrace.png',
   './assets/fire.png',
   './assets/frock.png',
@@ -53,10 +53,20 @@ var titles = [
   "Stolen Rubies",
   "Emerald Eyes",
   "Sapphire Skies",
-  "Opal Passions"
+  "Opal Passions",
+  "Sexual Healing",
+  "Going Down Under",
+  "Front End or Back End? FULL STACK",
+  "Rocky Mountain Daddy",
+  "She's a Bad Mama Jama",
 ];
 
 var descriptors = [
+  "butts",
+  "thirst",
+  "relief",
+  "tension",
+  "throbbing",
   "passion",
   "glory",
   "romance",
