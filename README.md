@@ -1,13 +1,24 @@
-# RomCom
+# Make Your Own Romance Novel Cover
 
-A boilerplate repo. 
+A Turing School of Software and Design project.
 
-## Set Up
-1. ONE teammate: fork this boilerplate repository 
-2. Clone down your new, forked repo
-3. cd into the repository
-4. Open it in your text editor
-5. View the project in the browser by running open index.html in your terminal
-6. Add all project partners and your assigned instructor as collaborators on the repository
+## Deployed Page
 
-The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/romcom-pair.html)
+View our deployed page [here!](https://patrickgbecker.github.io/Make-Your-Own-Romance-Novel-Cover/)
+
+## Contributors
+
+- Stephanie Guzman
+- Patrick Becker
+
+## Features:
+
+ - Randomly generated cover upon load
+
+ - Generate random covers upon button click
+
+ - Make your own with provided images, titles, and quotes
+
+ - Save all of your favorite covers
+
+ - Changed your mind? Delete saved covers by double clicking
